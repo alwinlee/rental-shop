@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <BicycleShop title="福克斯自行車店"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BicycleShop from './components/BicycleShop.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BicycleShop
   }
 }
 </script>
