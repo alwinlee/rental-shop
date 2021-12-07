@@ -1,12 +1,13 @@
 <template>
   <div class="shop">
     <h1>{{ title }}</h1>
+    <img style="width: 60px" src="@/assets/bicycle-icon.png" />
     <div class="bulletin">
       <p> Available bicycles : {{ maxbikes - rentalbikes }} </p>
       <p> Rental bicycles : {{ rentalbikes}} </p>
       <div class="button-group">
         <button v-on:click="returnBike" :disabled="rentalbikes <= 0">還</button>
-        <div>{{ maxbikes - rentalbikes }} </div>
+        <p style="display: inline-block; width: 40px;"> {{ maxbikes - rentalbikes }} </p>
         <button @click="rentBike" v-bind:disabled="(maxbikes - rentalbikes) <= 0">借</button>
       </div>
 
@@ -15,16 +16,19 @@
         <p class="text-danger" v-else>No bike is available.</p>
       </div>
       <div class="info-msg">
-        <p v-show="haveBikes" :class="{'text-info': haveBikes, 'text-danger': !haveBikes}">Bikes are available.</p>
-        <p v-show="haveBikes == false" :class="{'text-info': haveBikes, 'text-danger': !haveBikes}">No bike is available.</p>
+        <p v-show="haveBikes" :class="{'text-info': haveBikes, 'text-danger': !haveBikes}">自転車が利用可能です</p>
+        <p v-show="haveBikes == false" :class="{'text-info': haveBikes, 'text-danger': !haveBikes}">自転車はありません</p>
       </div>
+
     </div>
+    <hr style="width: 20%;">
     <div class="rules">
       <h3>Rules</h3>
       <ol>
         <li v-for="(item, index) in rules" :key="index"> {{item}} </li>
       </ol>
     </div>
+    <hr style="width: 20%;">
   </div>
 </template>
 
@@ -67,11 +71,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .shop {
+    text-align: center;
+  }
+
   .shop > h1 {
     color: #42b983;
   }
 
-  .shop > h1:after {
+  .shop > h2:after {
     content: '🚲';
     font-weight: normal;
   }
@@ -85,16 +93,19 @@ export default {
   .text-danger { color: #dc3545; }
 
   .button-group {
-    display: flex;
-    align-items: center;
-  }
-
-  .button-group > div {
-    width: 40px;
+    /* display: flex; */
+    /* align-items: center;*/
+    margin: 0 auto;
     text-align: center;
   }
 
   .rules {
-    margin: 15px 20px;
+    width: 350px;
+    text-align: left;
+    margin: 15px auto;
+  }
+
+  .rules > h3 {
+    text-align: center;
   }
 </style>
