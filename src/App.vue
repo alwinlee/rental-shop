@@ -1,5 +1,5 @@
 <template>
-  <BicycleShop title="福克斯自行車店" v-bind:maxbikes="maxbikes" @rentBike="rentBike" @retuenBike="retuenBike"/>
+  <BicycleShop title="-- 福克斯自行車店 --" v-bind:maxbikes="maxbikes" @rentBike="rentBike" @retuenBike="retuenBike"/>
   <TotalIncome title="Total Income" v-bind:rental="rental" v-bind:fee="fee" @resetBike="resetBike" />
 </template>
 
@@ -42,6 +42,11 @@ export default {
   color: #2c3e50;
   margin: auto;
   margin-top: 60px;
-  width: 400px;
+
+  /*width: 400px;*/
+}
+
+body {
+  background-color: #f0f0f0;
 }
 </style>
