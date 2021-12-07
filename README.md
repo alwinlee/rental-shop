@@ -33,3 +33,5 @@ $ vue create my-project
 ```
 "dev": "node --inspect ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve"
 ```
+### [DEMO-圖示畫面]<br>
+![bike](https://user-images.githubusercontent.com/23205845/144997042-60ffbbca-42d9-4e70-8771-6148c58e63a8.png)
